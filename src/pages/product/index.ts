@@ -1,1 +1,1 @@
-export { default as Product } from "./product.component";
+export { default as ProductPage } from "./product.component";

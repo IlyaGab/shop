@@ -1,32 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import Select from "@mui/material/Select";
-import { FormControl, InputLabel, MenuItem, SelectChangeEvent } from "@mui/material";
+import { Header } from "@shared/components/header";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "@shared/components/app-routes";
 
 function App() {
-  const [age, setAge] = useState("");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
-
   return (
-    <div className="App">
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <AppRoutes />
+      </div>
+    </BrowserRouter>
   );
 }
 
